@@ -13,7 +13,7 @@ npm install express cors mongoose bcryptjs jsonwebtoken
 Start the server with:
 
 ```bash
-node index.js
+node index.mjs
 ```
 
 The server will run on http://localhost:5000 and provide authentication routes for login and registration.
