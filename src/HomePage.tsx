@@ -37,6 +37,15 @@ const HomePage = () => {
             </section>
 
             <section className='py-8 px-4'>
+                <h3 className='text-xl font-bold mb-4'>Shop by Category</h3>
+                <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>
+                    {categories.map((category) => (
+                        <CategoryItem key={category.href} {...category} />
+                    ))}
+                </div>
+            </section>
+
+            <section className='py-8 px-4'>
                 <h3 className='text-xl font-bold mb-4'>Booking Stages</h3>
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4'>
                     {[1, 2, 3, 4, 5].map((stage) => (
@@ -95,7 +104,11 @@ const HomePage = () => {
                 <p className='text-sm'>© 2025 Occasia. All rights reserved.</p>
             </footer>
 
-            <FeaturedProducts featuredProducts={products} />
+            {isLoading ? (
+                <div className='py-8 px-4 text-center'>Loading featured products...</div>
+            ) : (
+                <FeaturedProducts featuredProducts={products} />
+            )}
         </div>
     )
 }

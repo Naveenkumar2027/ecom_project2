@@ -1,4 +1,4 @@
-import { Product } from '../stores/useProductStore'
+import type { Product } from '../stores/useProductStore'
 
 interface Props {
     featuredProducts: Product[]
